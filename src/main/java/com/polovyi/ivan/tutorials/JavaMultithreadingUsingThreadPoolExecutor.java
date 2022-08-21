@@ -28,8 +28,6 @@ public class JavaMultithreadingUsingThreadPoolExecutor {
         CustomerPurchaseTransactionClient customerPurchaseTransactionClient = new CustomerPurchaseTransactionClient();
         CustomerDataClient customerDataClient = new CustomerDataClient();
 
-        int availableProcessors = Runtime.getRuntime().availableProcessors();
-        log.info("Available processors {}", availableProcessors);
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 2, 10L, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
         Future<List<PurchaseTransactionResponse>> purchaseTransactionResponsesFuture = threadPoolExecutor.submit(

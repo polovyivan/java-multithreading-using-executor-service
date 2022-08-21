@@ -25,8 +25,6 @@ public class JavaMultithreadingUsingExecutorService {
         CustomerPurchaseTransactionClient customerPurchaseTransactionClient = new CustomerPurchaseTransactionClient();
         CustomerDataClient customerDataClient = new CustomerDataClient();
 
-        int availableProcessors = Runtime.getRuntime().availableProcessors();
-        log.info("Available processors {}", availableProcessors);
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
         Future<List<PurchaseTransactionResponse>> purchaseTransactionResponsesFuture = executorService.submit(
